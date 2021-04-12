@@ -10,7 +10,7 @@ function writePassword() {
   var length = "";
   length = prompt("Select password length. Enter a number between 8-128");
   
-  if (length > 8 && length < 128) {
+  if (length > 7 && length < 129) {
     inputs();
   } else {
     writePassword()
@@ -19,16 +19,16 @@ function writePassword() {
   //inputs();
   // return length;
 
-  //var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-  //passwordText.value = password;
+  passwordText.value = password;
 };
 
 function inputs() {
   var lowercase = confirm("Do you want lower case letters?"); 
   var uppercase = confirm("Do you want upper case letters?");
-  var numeric = confirm("Do you want numeric values?");
+  var numeric = confirm("Do you want numbers?");
   var special = confirm("Do you want special characters?");
   
   console.log(lowercase)
@@ -40,8 +40,6 @@ function inputs() {
   }
 
 }
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
